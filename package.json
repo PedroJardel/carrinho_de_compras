@@ -1,0 +1,15 @@
+{
+  "name": "carrinho_de_compras",
+  "version": "1.0.0",
+  "description": "projeto de uma api rest que adiciona produtos em um carrinho de compras",
+  "license": "ISC",
+  "author": "Pedro Lima",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
