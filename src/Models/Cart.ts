@@ -1,11 +1,9 @@
-import { Product } from "../../generated/prisma/index";
+import { Product } from "./Product.js";
 
-class Cart {
-    readonly products: Product[];
-    readonly quantity: number;
-
-    constructor (products: Product[], quantity: number) {
-        this.products = products
-        this.quantity = quantity
-    }
+export class Cart 
+{
+    constructor ( 
+        protected products: Product[],
+        protected quantity: number,
+    ){}
 }

@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -15,19 +14,25 @@ model Product {
   title       String
   description String
   code        String   @default(uuid())
-  price       Float    @default(0.00)
-  status      Boolean  @default(false)
-  stock       Int      @default(0)
+  price       Float
+  status      Boolean  @default(true)
+  stock       Int
   category    String
   thumbnail   String?
-  Cart        Cart?    @relation(fields: [cartId], references: [id])
-  cartId      String?  @db.ObjectId
+
+  carts Cart[]
+
+  @@map("products")
 }
 
 model Cart {
-  id        String    @id @default(uuid()) @map("_id") @db.ObjectId
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  products  Product[]
-  quantity  Int       
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  productId String   @db.ObjectId
+  quantity  Int
+
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("carts")
 }

@@ -5,10 +5,13 @@
   "license": "ISC",
   "author": "Pedro Lima",
   "type": "module",
-  "main": "app.js",
+  "ts-node": {
+    "esm": true
+  },
+  "main": "app.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.js"
+    "dev": "npx ts-node src/app.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.6.0",
@@ -16,8 +19,10 @@
     "nodemon": "^3.1.9"
   },
   "devDependencies": {
+    "@types/express": "^5.0.1",
     "@types/node": "^22.14.1",
     "prisma": "^6.6.0",
+    "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3"
   }
