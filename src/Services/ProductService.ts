@@ -1,4 +1,4 @@
-import { ProductRespository } from "../Repositories/ProductRepository.js";
+import { ProductRespository } from "../Repositories/PrismaProductRepository.js";
 import { Prisma, Product } from "@prisma/client";
 
 export class ProductService {
